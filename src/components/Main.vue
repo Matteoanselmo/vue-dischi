@@ -1,8 +1,8 @@
 <template>
   <div id="index-main">
-    <div class="container-fluid">
-      <div class="row text-center">
-        <div class="col-3 p-2" v-for="(element, index) in mainCards" :key="index">
+    <div class="my-container p-5">
+      <div class=" d-flex flex-wrap justify-content-evenly">
+        <div v-for="(element, index) in mainCards" :key="index">
           <ProductCard :character="element"/>
         </div>
       </div>
@@ -48,5 +48,9 @@ export default {
   @import '@/style/main-style.scss';
   #index-main{
     background-color: #1E2D3B;
+    .my-container{
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 </style>
