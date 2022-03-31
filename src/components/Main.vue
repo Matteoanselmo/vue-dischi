@@ -1,6 +1,6 @@
 <template>
   <div id="index-main">
-    <select name="Genere" id="music-genere">
+    <select id="music-genere" v-model="genere">
       <option value="Rock">Rock</option>
       <option value="Pop">Pop</option>
       <option value="Jazz">Jazz</option>
@@ -10,7 +10,10 @@
     <div class="my-container p-5">
       <div class=" d-flex flex-wrap justify-content-evenly">
         <div v-for="(element, index) in mainCards" :key="index" >
-          <ProductCard :character="element"/>
+          <ProductCard 
+          :character="element"
+          v-if="genere == element.genre"
+          />
         </div>
       </div>
     </div>
@@ -28,6 +31,7 @@ export default {
   data: function(){
     return{
       mainCards: null,
+      genere: ''
     }
   },
   created: function(){
@@ -48,9 +52,14 @@ export default {
     musicalGenre(){
       for(let i = 0; i < this.mainCards.length; i++){
         console.log(this.mainCards[i].genre);
+        
       }
-      
-      // $this.$emit( 'search', this.character.genre);
+      console.warn(this.genere);
+    },
+    selecteCard(element){
+      if(this.genere == ''){
+        this.genere = element.genre;
+      }
     }
   }
 
