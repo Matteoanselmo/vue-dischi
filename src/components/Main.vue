@@ -12,7 +12,7 @@
         <div v-for="(element, index) in mainCards" :key="index" >
           <ProductCard 
           :character="element"
-          v-if="genere == element.genre"
+          v-if="(genere == element.genre) || (genere === '')"
           />
         </div>
       </div>
@@ -56,11 +56,11 @@ export default {
       }
       console.warn(this.genere);
     },
-    selecteCard(element){
-      if(this.genere == ''){
-        this.genere = element.genre;
-      }
-    }
+    // selecteCard(element){
+    //   if(this.genere == ''){
+        
+    //   }
+    // }
   }
 
 }
