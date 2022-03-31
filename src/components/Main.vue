@@ -1,8 +1,15 @@
 <template>
   <div id="index-main">
+    <select name="Genere" id="music-genere">
+      <option value="Rock">Rock</option>
+      <option value="Pop">Pop</option>
+      <option value="Jazz">Jazz</option>
+      <option value="Metal">Metal</option>
+    </select>
+    <button class="btn btn-primary" @click="musicalGenre()">Console Genere</button>
     <div class="my-container p-5">
       <div class=" d-flex flex-wrap justify-content-evenly">
-        <div v-for="(element, index) in mainCards" :key="index">
+        <div v-for="(element, index) in mainCards" :key="index" >
           <ProductCard :character="element"/>
         </div>
       </div>
@@ -37,6 +44,13 @@ export default {
       .catch((error) => {
         console.error(error);
       })
+    },
+    musicalGenre(){
+      for(let i = 0; i < this.mainCards.length; i++){
+        console.log(this.mainCards[i].genre);
+      }
+      
+      // $this.$emit( 'search', this.character.genre);
     }
   }
 

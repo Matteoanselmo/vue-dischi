@@ -14,7 +14,21 @@
 <script>
 export default {
   name: 'MusicCard',
-  props: { 'character' : Object }
+  props: { 'character' : Object },
+  data: function(){
+    return{
+      genre: [],
+    }
+  }
+  // methods: {
+  //   musicalGenre(){
+      
+  //     this.genre.push(this.character.genre);
+  //     console.log(this.character);
+  //     console.log(this.genre);
+  //     this.$emit( 'search', this.character.genre);
+  //   }
+  // }
 }
 </script>
 
