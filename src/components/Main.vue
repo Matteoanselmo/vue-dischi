@@ -52,9 +52,9 @@ export default {
     musicalGenre(){
       for(let i = 0; i < this.mainCards.length; i++){
         console.log(this.mainCards[i].genre);
-        
       }
       console.warn(this.genere);
+      this.genere = '';
     },
     // selecteCard(element){
     //   if(this.genere == ''){
